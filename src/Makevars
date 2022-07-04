@@ -1,6 +1,0 @@
-PKG_LIBS=-L/usr/local/Cellar/protobuf/3.19.4/lib -lprotobuf
-PKG_CPPFLAGS=-I/usr/local/Cellar/protobuf/3.19.4/include
-CXX_STD=CXX11
-
-SOURCES = $(wildcard *.cc) $(wildcard *.cpp)
-OBJECTS = $(SOURCES:.cc=.o) $(SOURCES:.cpp=.o)

@@ -7,4 +7,5 @@ public:
   RecordWriter (std::string path);
   ~RecordWriter ();
   bool write_record (std::string data);
+  void flush();
 };

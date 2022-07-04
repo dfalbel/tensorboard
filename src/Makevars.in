@@ -1,6 +1,8 @@
 PKG_LIBS=@libs@
-PKG_CPPFLAGS=@cflags@
+PKG_CPPFLAGS=@cflags@ -I.
 CXX_STD=CXX11
 
-SOURCES = $(wildcard *.cc) $(wildcard *.cpp)
-OBJECTS = $(SOURCES:.cc=.o) $(SOURCES:.cpp=.o)
+CPP_SOURCES=$(wildcard *.cpp)
+CC_SOURCES=$(wildcard *.cc plugins/scalar/*.cc)
+
+OBJECTS=$(CPP_SOURCES:.cpp=.o) $(CC_SOURCES:.cc=.o)

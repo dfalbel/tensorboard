@@ -69,3 +69,7 @@ bool RecordWriter::write_record (std::string data) {
   return true;
 }
 
+void RecordWriter::flush () {
+  this->writer.flush();
+}
+
