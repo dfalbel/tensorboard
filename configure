@@ -71,5 +71,13 @@ echo "Using PKG_LIBS=$PKG_LIBS"
 # Write to Makevars
 sed -e "s|@cflags@|$PKG_CFLAGS|" -e "s|@libs@|$PKG_LIBS|" src/Makevars.in > src/Makevars
 
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/event.proto"
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/summary.proto"
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/tensor.proto"
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/resource_handle.proto"
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/tensor_shape.proto"
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/types.proto"
+protoc -I "src/proto" --cpp_out="src/proto" "src/proto/plugins/scalar/plugin_data.proto"
+
 # Success
 exit 0

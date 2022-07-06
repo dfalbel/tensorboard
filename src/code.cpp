@@ -1,9 +1,9 @@
-#include "event.pb.h"
-#include "summary.pb.h"
+#include "proto/event.pb.h"
+#include "proto/summary.pb.h"
 #include "plugins/scalar/plugin_data.pb.h"
 #include "event_writer.h"
-#include "tensor.pb.h"
-#include "tensor_shape.pb.h"
+#include "proto/tensor.pb.h"
+#include "proto/tensor_shape.pb.h"
 #include "utils.h"
 
 #include <Rcpp.h>
@@ -78,5 +78,11 @@ bool write_scalar (Rcpp::XPtr<EventWriter> writer, const std::string& name,
                                       const std::string& description) {
   auto event = core::event_scalar(name, data, step, description);
   return writer->write_event(event);
+}
+
+// [[Rcpp::export]]
+void unload_protobuf()
+{
+  google::protobuf::ShutdownProtobufLibrary();
 }
 

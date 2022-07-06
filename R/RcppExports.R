@@ -13,3 +13,7 @@ write_scalar <- function(writer, name, data, step, description) {
     .Call(`_tensorboard_write_scalar`, writer, name, data, step, description)
 }
 
+unload_protobuf <- function() {
+    invisible(.Call(`_tensorboard_unload_protobuf`))
+}
+

@@ -7,3 +7,8 @@ NULL
 #' @importFrom Rcpp sourceCpp
 ## usethis namespace: end
 NULL
+
+.onUnload <- function (libpath) {
+  unload_protobuf()
+  library.dynam.unload("tensorboard", libpath)
+}

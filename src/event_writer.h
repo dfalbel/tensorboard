@@ -1,5 +1,5 @@
 #include "record_writer.h"
-#include "event.pb.h"
+#include "proto/event.pb.h"
 
 // Prefix of version string present in the first entry of every event file.
 static constexpr const char* kVersionPrefix = "brain.Event:";

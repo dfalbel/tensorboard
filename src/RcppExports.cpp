@@ -47,11 +47,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// unload_protobuf
+void unload_protobuf();
+RcppExport SEXP _tensorboard_unload_protobuf() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    unload_protobuf();
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_tensorboard_event_writer", (DL_FUNC) &_tensorboard_event_writer, 1},
     {"_tensorboard_flush_event_writer", (DL_FUNC) &_tensorboard_flush_event_writer, 1},
     {"_tensorboard_write_scalar", (DL_FUNC) &_tensorboard_write_scalar, 5},
+    {"_tensorboard_unload_protobuf", (DL_FUNC) &_tensorboard_unload_protobuf, 0},
     {NULL, NULL, 0}
 };
 
